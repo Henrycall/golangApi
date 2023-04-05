@@ -7,3 +7,4 @@ type CreateConversionRequest struct {
     Rate        float64 `json:"rate"`
     Converted   float64 `json:"converted"`
 }
+

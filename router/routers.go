@@ -7,7 +7,6 @@ import (
 func initializeRouters(router *gin.Engine){
 	handler.InitializeHandler()
 	v1 := router.Group("/exchange")
-	
 		v1.GET("/:amount/:from/:to/:rate" , handler.Conversation)
 	
 }
