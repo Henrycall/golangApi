@@ -5,7 +5,7 @@ import (
 )
 
 func Conversation(ctx *gin.Context){
-	ctx.JSON(200,gin.H{
-		"message" : "POST JOB",
-	})
+	request := CreateConversionRequest{}
+	ctx.BindJSON(&request)
+	logger.Infof("request reciviced : %+v " ,request)
 }
