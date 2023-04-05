@@ -23,7 +23,9 @@ Resposta:  `{
 
 ## Instalação e Uso ##
 Para rodar a aplicação, é necessário ter o Go instalado na máquina. Além disso, as dependências do projeto devem ser baixadas:
+`
 go mod tidy
+`
 
 Para iniciar a aplicação, rode o comando:
 `
