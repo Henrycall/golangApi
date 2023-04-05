@@ -8,6 +8,6 @@ func Initialize(){
 	initializeRouters(r)
 
 	// run server
-	r.Run(":3000") 
+	r.Run(":8000") 
 }
 

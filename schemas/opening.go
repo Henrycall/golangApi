@@ -14,3 +14,7 @@ import (
 	Salary int64
   }
 
+  type openingResponde struct {
+	
+  }
+

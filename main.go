@@ -15,7 +15,6 @@ func main()  {
 	logger := config.GetLogger("main")
 	err := config.Init()
 	if err != nil {
-		panic(err)
 		logger.Errf("config initializaion error : %v" , err )
 		fmt.Println(err)
 		return
