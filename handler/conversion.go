@@ -17,8 +17,12 @@ func Conversation(ctx *gin.Context){
 	amountRate, err := strconv.ParseFloat(rate, 64)
 	if err != nil {}
 	result, symbol := Convert(amountFloat,from,to,amountRate)
-	print(result,symbol)
+	response := gin.H{
+		"valorConvertido" : result,
+		"simboloMoeda" : symbol,
+	}
 
+	ctx.JSON(200, response )
 
 	ctx.BindJSON(&request)
 	logger.Infof("request reciviced : %+v " ,request)
