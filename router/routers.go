@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 func initializeRouters(router *gin.Engine){
-	v1 := router.Group("/api/v1")
+	v1 := router.Group("/exchange")
 	
 		v1.GET("/opening" , handler.ShowOpeningHandler)
 		v1.POST("/opening" , handler.CreateOpeningHandler)
