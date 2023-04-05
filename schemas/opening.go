@@ -4,17 +4,21 @@ import (
 	"gorm.io/gorm"
   )
   
-  type Opening struct {
+  type Conversion struct {
 	gorm.Model
-	Role  string
-	Comapany string
-	Location string
-	Remite bool
-	Link string
-	Salary int64
+	ID          int     
+    From        string  
+    To          string  
+    Rate        float64 
+    Converted   float64
   }
 
-  type openingResponde struct {
-	
+  type ConversionResponse struct {
+	ID          int     `json:"id"`
+    From        string  `json:"from"`
+    To          string  `json:"to"`
+    Rate        float64 `json:"rate"`
+    Converted   float64 `json:"converted"`
+
   }
 

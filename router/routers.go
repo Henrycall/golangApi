@@ -7,10 +7,6 @@ import (
 func initializeRouters(router *gin.Engine){
 	v1 := router.Group("/exchange")
 	
-		v1.GET("/opening" , handler.ShowOpeningHandler)
-		v1.POST("/opening" , handler.CreateOpeningHandler)
-		v1.PUT("/opening" , handler.CreateOpeningHandler)
-		v1.DELETE("/opening" , handler.DeletepeningHandler)
-		v1.GET("/openings" , handler.ListOpeningHandler)
+		v1.GET("/:amount/:from/:to/:rate" , handler.Conversation)
 	
 }

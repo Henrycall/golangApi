@@ -32,7 +32,7 @@ func InitializeSQLite() (*gorm.DB , error){
 		logger.Errf("sqlite opning error:  %v" , err)
 		return nil,err
 	}
-	err = db.AutoMigrate(schemas.Opening{})
+	err = db.AutoMigrate(schemas.Conversion{})
 	if err != nil {
 		logger.Errf("sqlite automigration error : %v" , err)
 	}
