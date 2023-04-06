@@ -1,4 +1,4 @@
- # Conversor de Moedas  #
+ # Conversor de Moedas  # Jedi Henry
 Este projeto é uma API REST para conversão de moedas, escrita em Golang e utilizando o framework Gin e o banco de dados SQLite.
 
 ## Rotas ##
