@@ -2,6 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/Henrycall/golangApi/schemas"
 	"strconv"
 )
 
@@ -29,10 +30,13 @@ func Conversation(ctx *gin.Context){
 			"valorConvertido" : result,
 			"simboloMoeda" : symbol,
 		}
-		if err := db.Create(response).Error; err != nil {
+		conversion := &schemas.Conversion{Amount: amountFloat, FromCurrency: from, ToCurrency: to, Rate: amountRate, Result: result, Symbol: symbol}
+
+		if err := db.Create(conversion).Error; err != nil {
 			logger.Errf("error create opening :  %v",  err.Error() )
 		}
 		ctx.JSON(200, response)
+		
 	}
 
 	//ctx.BindJSON(&request)
