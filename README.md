@@ -22,6 +22,8 @@ Resposta:  `{
 
 
 ## Instalação e Uso ##
+
+Vá para a branch  `conversao`
 Para rodar a aplicação, é necessário ter o Go instalado na máquina. Além disso, as dependências do projeto devem ser baixadas:
 go mod tidy
 
