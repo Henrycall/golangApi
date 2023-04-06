@@ -7,7 +7,7 @@ import (
 
 func Conversation(ctx *gin.Context){	
 	// Get path params
-	request := CreateConversionRequest{}
+	// request := CreateConversionRequest{}
 	amount := ctx.Param("amount")
 	from := ctx.Param("from")
 	to := ctx.Param("to")
@@ -22,21 +22,19 @@ func Conversation(ctx *gin.Context){
 	}
 	 // convert valors in funciton Convert , he returns result and symbol
 	result, symbol,err := Convert(amountFloat,from,to,amountRate)
-	
-	if result ==  0|| symbol  == "" {
-		response := gin.H{
-			"err" : "Algum operador esta errado",
-		}
-		ctx.JSON(400, response)
+	if err != nil {
+		ctx.JSON(400, err.Error())
 	}else {
 		response := gin.H{
 			"valorConvertido" : result,
 			"simboloMoeda" : symbol,
 		}
-		
+		if err := db.Create(response).Error; err != nil {
+			logger.Errf("error create opening :  %v",  err.Error() )
+		}
 		ctx.JSON(200, response)
 	}
 
-	ctx.BindJSON(&request)
-	logger.Infof("request reciviced : %+v " ,request)
+	//ctx.BindJSON(&request)
+	 //logger.Infof("request reciviced : %+v " ,request)
 }

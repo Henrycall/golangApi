@@ -1,10 +1,15 @@
 package handler
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Convert(amount float64, from string, to string, rate float64) (float64, string, error) {
 	var result float64
 	var symbol string
+	from = strings.ToUpper(from) // Converte 'from' para maiúsculas
+	to = strings.ToUpper(to) // Converte 'to' para maiúsculas
 	
 	switch from {
 	case "BRL":
