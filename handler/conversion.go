@@ -38,7 +38,6 @@ func Conversation(ctx *gin.Context){
 		ctx.JSON(200, response)
 		
 	}
-
 	//ctx.BindJSON(&request)
 	 //logger.Infof("request reciviced : %+v " ,request)
 }
